@@ -123,6 +123,31 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
+.menu-toggle {
+  display: none; /* fica oculto no desktop */
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: var(--azul-escuro);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-left: auto;
+  z-index: 2000;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* Mostra o botão no mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
+
 /* HERO */
 .hero {
   position: relative;
@@ -385,13 +410,15 @@ footer {
 </style>
 </head>
 <body>
-  <header>
-  <nav>
+<header>
+  <nav class="navbar">
     <div class="logo-container">
       <img src="logo3.png" alt="JVF Transportes Logo" class="logo" />
       <h1>JVF transportes</h1>
+      <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</button>
+
     </div>
-    <ul>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#Avaliações">Avaliações</a></li>
@@ -399,6 +426,8 @@ footer {
     </ul>
   </nav>
 </header>
+
+
 
 
  <section class="hero">
@@ -587,7 +616,14 @@ footer {
   <footer>
     <p>&copy; 2025 Carreto Azul. Todos os direitos reservados.</p>
   </footer>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('active');
+  }
+</script>
 
   <a href="https://wa.me/5511972733556" class="whatsapp" target="_blank" title="Fale pelo WhatsApp">💬</a>
 </body>
 </html>
+
