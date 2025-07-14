@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carreto Azul</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
- <style>
+<style>
  :root {
   --azul: #1a2a6c;
   --azul-escuro: #0d1447;
@@ -146,9 +146,7 @@ nav ul li a:hover::after {
   }
 }
 
-
-
-/* HERO */
+/* HERO (substituindo vídeo por imagem de fundo) */
 .hero {
   position: relative;
   width: 100vw;
@@ -162,13 +160,15 @@ nav ul li a:hover::after {
   z-index: 0;
 }
 
-.bg-video {
+.bg-image {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: cover;
+  background-image: url('foto1.jpg');
+  background-size: cover;
+  background-position: center;
   z-index: -1;
   pointer-events: none;
   user-select: none;
@@ -406,8 +406,8 @@ footer {
     background-position: 0% 50%;
   }
 }
-
 </style>
+
 </head>
 <body>
 <header>
@@ -430,17 +430,15 @@ footer {
 
 
 
- <section class="hero">
-  <video class="bg-video" autoplay muted loop playsinline>
-    <source src="fundo4.mp4" type="video/mp4" />
-    Seu navegador não suporta vídeo HTML5.
-  </video>
+<section class="hero">
+  <div class="bg-image"></div>
   <div class="hero-content">
     <h2>Fretes e Carretos com Agilidade</h2>
     <p>Rápido, seguro e com o melhor custo-benefício</p>
     <a href="agenda.html" class="btn">Solicite seu Pedido</a>
   </div>
 </section>
+
 
 
   <section id="sobre">
@@ -626,4 +624,3 @@ footer {
   <a href="https://wa.me/5511972733556" class="whatsapp" target="_blank" title="Fale pelo WhatsApp">💬</a>
 </body>
 </html>
-
